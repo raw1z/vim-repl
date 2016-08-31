@@ -6,7 +6,7 @@ if !exists("g:repl_map_keys")
 endif
 
 if g:repl_map_keys
-  nnoremap <leader>cc :SendToREPL<CR>
-  vnoremap <leader>cc :SendVisualSelectionToREPL<CR>
+  nnoremap <leader>! :SendToREPL<CR>
+  vnoremap <leader>! :SendVisualSelectionToREPL<CR>
 endif
 
