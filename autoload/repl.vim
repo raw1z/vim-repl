@@ -38,7 +38,8 @@ function! repl#update_repl(selection) "{{{
   endif
 endfunction "}}}
 function! repl#send_to_repl() "{{{
-  exe "%SendVisualSelectionToREPL"
+  let selection = join(getline(1,'$'), "\n")
+  call repl#update_repl(selection)
 endfunction "}}}
 function! repl#send_visual_selection_to_repl() "{{{
   let selection = s:Vim.get_last_selected()
