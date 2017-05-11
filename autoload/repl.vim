@@ -34,7 +34,8 @@ function! repl#update_repl(selection) "{{{
     execute terminalWindowNumber . "wincmd w"
     let @r = a:selection
     put r
-    call feedkeys("a\r")
+    startinsert
+    call feedkeys("\r")
   endif
 endfunction "}}}
 function! repl#send_to_repl() "{{{
