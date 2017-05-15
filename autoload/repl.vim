@@ -11,6 +11,7 @@ let s:repl_map = {
       \"elixir-mix" : "iex -S mix",
       \"elixir-phoenix" : "iex -S mix phoenix.server",
       \"lisp" : "sbcl",
+      \"clojure" : "lein repl",
       \"python" : "python",
       \"elm" : "elm-repl",
       \"javascript" : "node",
@@ -72,6 +73,8 @@ function! s:repl_map.get_command() abort "{{{
     return self.get_ruby_command()
   elseif &ft == 'elixir'
     return self.get_elixir_command()
+  elseif &ft == 'clojure'
+    return self.get_clojure_command()
   elseif &ft == 'lisp'
     return self.get_lisp_command()
   elseif &ft == 'python'
@@ -106,6 +109,9 @@ function! s:repl_map.get_elixir_command() abort "{{{
 endfunction "}}}
 function! s:repl_map.get_lisp_command() abort "{{{
   return self['lisp']
+endfunction "}}}
+function! s:repl_map.get_clojure_command() abort "{{{
+  return self['clojure']
 endfunction "}}}
 function! s:repl_map.get_python_command() abort "{{{
   return self['python']
