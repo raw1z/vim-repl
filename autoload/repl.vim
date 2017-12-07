@@ -40,7 +40,7 @@ function! repl#update_repl(selection) "{{{
   endif
 endfunction "}}}
 function! repl#send_to_repl() "{{{
-  let selection = join(getline(1,'$'), "\n")
+  let selection = getline(".") . "\n"
   call repl#update_repl(selection)
 endfunction "}}}
 function! repl#send_visual_selection_to_repl() "{{{
