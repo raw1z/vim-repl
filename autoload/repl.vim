@@ -114,7 +114,11 @@ function! s:repl_map.get_clojure_command() abort "{{{
   return self['clojure']
 endfunction "}}}
 function! s:repl_map.get_python_command() abort "{{{
-  return self['python']
+  if filereadable('requirements.txt')
+    return self['python']
+  else
+    return self['python'].' -i '.expand('%:p')
+  endif
 endfunction "}}}
 function! s:repl_map.get_elm_command() abort "{{{
   return self['elm']
